@@ -13,8 +13,13 @@ I basically want to build something that does the following (thanks o1-mini for 
 
 3 main steps:
 
-1. LLM/fastAPI endpoint.
+1. LLM/fastAPI endpoint. [DONE]
 2. Data pipeline: wiki -> embed -> store -> retrieve.
+
+* I have 500k paragraphs of wiki, that I used for training.
+* I will just use as first dump.
+
+
 3. port forwarding / ssh tunneling (I will host the LLM in my remote compute pod); and expose it locally - smth weby.
 
 Extra:
@@ -86,6 +91,8 @@ Marketing PR:
 
 * Exposing local LLM through FastAPI endpoint.
 * Combine with Kubernetes for managing multiple instances.
+* Using chromaDB to store and retrieve vector data or my custom embeddings (see project for details)
+*  
 
 * `uvicorn`, `pydantic`, `vllm`
 * Eventually host on a AZURE? AWS?
@@ -129,3 +136,20 @@ Marketing PR:
 </details>
 
 
+
+
+
+## Unrelated:
+
+I always run into problems regarding `sqlite3`:
+
+```bash
+$ wget https://www.sqlite.org/2025/sqlite-autoconf-3480000.tar.gz
+$ tar xzf sqlite-autoconf-3480000.tar.gz
+$ cd sqlite-autoconf-3480000.tar.gz
+$ ./configure --prefix=/usr/local
+$ make
+$ sudo make install
+```
+
+thanks `o1-mini`, what a beast!
